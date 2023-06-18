@@ -1,0 +1,48 @@
+<?php
+
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\KonfirmasiController;
+use App\Http\Controllers\UserController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+
+//Surat Pengantar Laporan
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/cetakqr/{id}', [KonfirmasiController::class, 'cetakqr'])->name('cetakqr');
+
+    Route::group(['middleware' => ['hakakses:4']], function() {
+        Route::resource('/laporan', LaporanController::class);
+        Route::get('suratpengantar', [LaporanController::class, 'suratpengantar'])->name('suratpengantar');
+        Route::post('/konfirmasi/{id}', [KonfirmasiController::class, 'konfirmasi'])->name('konfirmasi');
+    });
+});
+
+//Konfirmasi
+Route::get('/tampilkansp/{id}/{token}', [KonfirmasiController::class, 'tampilkansptoken'])->name('tampilkansptoken');
+
+// Authentication
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/proseslogin', [LoginController::class, 'proseslogin'])->name('proseslogin');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//Registrasion
+Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
+Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->name('prosesregistrasi');
+
+Route::get('/', function () {
+    return view('welcome');
+});
