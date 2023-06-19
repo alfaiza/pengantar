@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Konfirmasi;
+use BaconQrCode\Renderer\Path\Path;
 use Illuminate\Http\Request;
 
 class KonfirmasiController extends Controller
@@ -32,8 +33,9 @@ class KonfirmasiController extends Controller
 
     public function cetakqr($id){
         $data = Konfirmasi::with('laporan')->find($id);
-        $img = asset('/img/logobpkp.jpg');
+        $img = asset('img/logobpkp.jpg');
         $url = url('tampilkansp/');
+        // dd($img);
         return view ('qrcode', compact('data','url','img'));    
     }
 }

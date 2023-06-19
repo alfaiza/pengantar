@@ -28,7 +28,9 @@
             <h3>{{ $data->laporan->judullaporan }}</h3>
             <h3>{{ $data->laporan->nolaporan }}</h3>
             <h3>tanggal {{ $data->laporan->tgllaporan }}</h3>
-            {!! QrCode::size(300)->generate($url.'/'.$data->id.'/'.$data->token) !!}
+            {{-- <img src="data:image/png;base64,{{ base64_encode(QrCode::format('png')->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token)) }}"> --}}
+            
+            {!! QrCode::size(300)->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token) !!}
             <h3>Scan barcode ini untuk mengirim<b>konfirmasi tanda terima</b> </h3>
         </tr>    
    </div>
