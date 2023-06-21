@@ -4,24 +4,12 @@
 @section('cekspaktif', 'active')
 @section('isibody')
 
-{{-- <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script> --}}
-{{-- <script src="{{asset('js/jquery-ui.min.js')}}"></script>
-<script src="{{asset('js/popper.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.min.js')}}"></script> --}}
 
 <!-- DataTables -->
 <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
-
-
-
-          {{-- @if (session('status'))
-              <div class="alert alert-success">
-                  {{ session('status') }}
-              </div>
-          @endif --}}
           <script>
             @if(Session::has('status'))
               const Toast = Swal.mixin({
@@ -78,10 +66,7 @@
       </tr>
       @endforeach 
       </tbody>
-      {{-- {{ $showdata->links() }} --}}
-      {{-- <table>
-        {{ $showdata->links() }}
-      </table> --}}
+
     </table>
     
 
@@ -143,7 +128,7 @@
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
           confirmButtonText: 'Yes, delete it!'
-        })
+    })
         .then((result) => {
           if (result.isConfirmed) {
             window.location= "/destroytujuan/"+spid+""
@@ -157,7 +142,6 @@
               text:"Tujuan SP tidak jadi dihapus"});
           }
         });
-    
     });
                   
 </script>
