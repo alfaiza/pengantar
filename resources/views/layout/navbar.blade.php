@@ -110,6 +110,12 @@
               <li class="nav-item">
                 <a href="/laporan/show" class="nav-link @yield('cekspaktif')" >
                   <i class="far fa-circle nav-icon"></i>
+                  <p>Cek Tujuan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/alllaporan" class="nav-link @yield('cekalllaporan')" >
+                  <i class="far fa-circle nav-icon"></i>
                   <p>Cek Laporan</p>
                 </a>
               </li>

@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Laporan extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'judullaporan',
+        'nolaporan',
+        'tgllaporan',
+        
+    ];
 
     public function konfirmasi()
     {

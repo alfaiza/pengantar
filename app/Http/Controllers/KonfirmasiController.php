@@ -34,8 +34,21 @@ class KonfirmasiController extends Controller
     public function cetakqr($id){
         $data = Konfirmasi::with('laporan')->find($id);
         $img = asset('img/logobpkp.jpg');
-        $url = url('tampilkansp/');
+        $url = url('konfirmasi/');
         // dd($img);
         return view ('qrcode', compact('data','url','img'));    
+    }
+
+    public function deletepeserta(Request $request){
+        Konfirmasi::where('id',$request->id)->delete();
+        // dd($bungkus);
+   
+        return response()->json(['success' => true]);
+
+    }
+
+    public function destroytujuan($id){
+        Konfirmasi::find($id)->delete();
+        return redirect('/laporan/show')->with('status', 'Tujuan Berhasil Di Hapus');
     }
 }

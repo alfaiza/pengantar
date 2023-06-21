@@ -34,10 +34,7 @@ class LaporanController extends Controller
                     'tujuan' => $data['tujuan'][$item],
                     'alamat' => $data['alamat'][$item],
                     'token' => $token
-                    
-                   
                 );
-                //
                 
                 Konfirmasi::create($data2);
                 // $token = new Konfirmasi;
@@ -73,6 +70,48 @@ class LaporanController extends Controller
         
         Konfirmasi::find($id)->delete();
         return redirect('/laporan/show')->with('status', 'Data Surat Pengantar Berhasil Dihapus');
+    }
+
+    public function editlaporan($id){
+        $data = Laporan::with('konfirmasi')->find($id);
+        $data2['konfirmasi'] = Konfirmasi::orderBy('id','desc')->paginate(5);
+        // dd($data);
+        return view ('admin.editlaporan', compact('data','data2'));
+    }
+
+    public function updatelaporan(Request  $request, $id){
+        
+        $ambildata = $request->all();
+        $data = Laporan::find($id);
+        $data->update($ambildata);
+        
+        if (count($ambildata['tujuan'])>0){
+            foreach ($ambildata['tujuan'] as $item =>$value){
+                $token = Str::random(16);
+                $data2 = array(
+                    'id' => $ambildata['id'][$item],
+                    'idlaporan' => $ambildata['idlaporan'][$item],
+                    'tujuan' => $ambildata['tujuan'][$item],
+                    'alamat' => $ambildata['alamat'][$item],
+                    'token' =>$token
+                );
+                Konfirmasi::upsert($data2,['id','idlaporan','tujuan','alamat'],['tujuan','alamat']);
+            }
+            // dd($data2);
+                        
+        }      
+        
+        // dd($data);
+
+        return redirect()->back()->with('success','Laporan Berhasil diupdate');
+    }
+
+    public function alllaporan()
+    {
+
+        $showdata = Laporan::with('konfirmasi')->orderBy('id','desc')->get();
+        // dd($showdata);
+        return view('admin.alllaporan',compact('showdata'));
     }
 
 }

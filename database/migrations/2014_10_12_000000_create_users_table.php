@@ -25,6 +25,9 @@ class CreateUsersTable extends Migration
             $table->integer('level')->default('4');            
             $table->string('unit')->default('-')->nullable();
             $table->string('bidang')->default('-')->nullable();
+            $table->string('jabatan')->nullable();
+            $table->string('ttd')->nullable();
+            
         });
     }
 

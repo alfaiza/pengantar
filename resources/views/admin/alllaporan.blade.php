@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 @section('splaporanopen', 'menu-open')
 @section('splaporanaktif', 'active')
-@section('cekspaktif', 'active')
+@section('cekalllaporan', 'active')
 @section('isibody')
 
 {{-- <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script> --}}
@@ -17,26 +17,12 @@
 
 
 
-          {{-- @if (session('status'))
+          @if (session('status'))
               <div class="alert alert-success">
                   {{ session('status') }}
               </div>
-          @endif --}}
-          <script>
-            @if(Session::has('status'))
-              const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-              })
-              
-                Toast.fire({
-                  icon: 'success',
-                  title: 'Laporan telah dihapus.'
-                })
-            @endif
-          </script>
+          @endif
+
 <div class="card">
   <div class="card-header">
     <h3 class="card-title"><b>Laporan</b></h3>
@@ -48,32 +34,30 @@
       <thead>
       <tr>
         <th>No</th>
-        <th>Nomor Surat Pengantar</th>
         <th>Nomor Laporan</th>
         <th>Judul Laporan</th>
         <th>Tujuan</th>
         <th>Aksi</th>
-        <th>Penerima</th>
-        <th>Tanggal Diterima</th>
       </tr>
       </thead>
       <tbody>
       @foreach ($showdata as $index => $row)
       <tr>
           <th>{{ $loop->iteration }}</th>
-          <th>SP-{{ $row->id }}/PW23/1/2023</th>  
-          <td>{{$row->laporan['nolaporan']}}</td>
-          <td>{{$row->laporan['judullaporan']}}</td>
-          <td>{{$row->tujuan}}</td>       
+          {{-- <th>SP-{{ $row->id }}/PW23/1/2023</th>   --}}
+          <td>{{$row->nolaporan}} tanggal {{$row->tgllaporan}}</td>
+          <td>{{$row->judullaporan}}</td>
+          <td>{{$row->konfirmasi->count()}}</td>       
           
           <td>
-            <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
-            <a href="/konfirmasi/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>
+            <a href="/editlaporan/{{$row->id}}" class="btn btn-warning mt-1"><i class="fas fa-edit"></i></a>
+            
+            {{-- <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
+            <a href="/tampilkansp/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>
             <a href="/editlaporan/{{$row->laporan->id}}" class="btn btn-warning mt-1"><i class="fas fa-edit"></i></a>
-            <a href="/cetakqr/{{$row->id}}" target="_blank" class="btn btn-success"><i class="fas fa-print"></i></a>
+            <a href="/cetakqr/{{$row->id}}" target="_blank" class="btn btn-success"><i class="fas fa-print"></i></a> --}}
           </td>
-          <td>{{$row->penerima}}</td>
-          <td>{{$row->tglditerima}}</td>
+
 
       </tr>
       @endforeach 
@@ -146,7 +130,7 @@
         })
         .then((result) => {
           if (result.isConfirmed) {
-            window.location= "/destroytujuan/"+spid+""
+            window.location= "destroy/"+spid+""
             swal.fire({
               title:"Data berhasil dihapus!",
               icon: "success",
