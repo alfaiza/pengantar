@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KonfirmasiController;
 use App\Http\Controllers\UserController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/cetakqr/{id}', [KonfirmasiController::class, 'cetakqr'])->name('cetakqr');
 
     Route::group(['middleware' => ['hakakses:4']], function() {
+        Route::resource('/user', UserController::class);
         Route::resource('/laporan', LaporanController::class);
         Route::get('/alllaporan', [LaporanController::class, 'alllaporan'])->name('alllaporan');
         Route::get('suratpengantar', [LaporanController::class, 'suratpengantar'])->name('suratpengantar');
@@ -35,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/destroytujuan/{id}', [KonfirmasiController::class, 'destroytujuan'])->name('destroytujuan');
     });
 });
+
 
 //Konfirmasi
 Route::get('/konfirmasi/{id}/{token}', [KonfirmasiController::class, 'tampilkansptoken'])->name('tampilkansptoken');
@@ -50,4 +53,8 @@ Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->n
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/modal', function () {
+    return view('admin.modal');
 });

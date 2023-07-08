@@ -68,6 +68,14 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="alamat" name="alamat[]" value="{{old('alamat', $item->alamat)}}" placeholder="masukan alamat tujuan" required>
             </div>
+            <label class="col-sm-2 col-form-label">Tanggal Pengiriman/SP</label>
+            <div class="col-sm-2">
+              <input type="date" value="{{old('alamat', $item->tglkirim)}}" class="form-control" id="tglkirim" name="tglkirim[]" required>
+            </div>
+            <label class="col-sm-2 col-form-label">Tanggal Ekspedisi</label>
+            <div class="col-sm-2">
+              <input type="date" value="{{old('alamat', $item->tglekspedisi)}}"class="form-control" id="tglekspedisi" name="tglekspedisi[]">
+            </div>
 
             
             <div class="col-sm-12">
@@ -85,7 +93,7 @@
 
         <div class="form-group row">
           <div class="col-sm-12">
-            <input type="submit" class="btn btn-success form-control" value="Submit">
+            <input type="submit" class="btn btn-success form-control" value="Update">
           </div>
         </div>
     </form>
@@ -108,8 +116,8 @@
     addtujuan();
   });
   function addtujuan(){
-    var peserta = '<input type="hidden" name="id[]" id="id" value=""><input type="hidden" name="idlaporan[]" id="idlaporan" value="{{$data->id}}"><input type="hidden" class="token" id="token" name="token[]" readonly><div><div class="form-group row"><label class="col-sm-2 col-form-label">Tujuan</label><div class="col-sm-10"><input type="text" class="form-control" id="tujuan" name="tujuan[]" placeholder="masukan mitra kerja tujuan" required></div><label class="col-sm-2 col-form-label">Alamat</label><div class="col-sm-10"><input type="text" class="form-control" id="alamat" name="alamat[]" placeholder="masukan alamat tujuan" required></div><div class="col-sm-2"></div><div class="col-sm-12"><button type="button" class="addtujuan btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></i></button><button type="button" class="remove btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
-    var peserta = '<input type="hidden" name="id[]" id="id" value=""><input type="hidden" name="idlaporan[]" id="idlaporan" value="{{$data->id}}"><input type="hidden" class="token" id="token" name="token[]" readonly><div><div class="form-group row"><label class="col-sm-2 col-form-label">Tujuan</label><div class="col-sm-10"><input type="text" class="form-control" id="tujuan" name="tujuan[]" placeholder="masukan mitra kerja tujuan" required></div><label class="col-sm-2 col-form-label">Alamat</label><div class="col-sm-10"><input type="text" class="form-control" id="alamat" name="alamat[]" placeholder="masukan alamat tujuan" required></div><div class="col-sm-2"></div><div class="col-sm-12"><button type="button" class="addtujuan btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></i></button><button type="button" class="remove btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
+    var peserta = '<input type="hidden" name="id[]" id="id" value=""><input type="hidden" name="idlaporan[]" id="idlaporan" value="{{$data->id}}"><input type="hidden" class="token" id="token" name="token[]" readonly><div><div class="form-group row"><label class="col-sm-2 col-form-label">Tujuan</label><div class="col-sm-10"><input type="text" class="form-control" id="tujuan" name="tujuan[]" placeholder="masukan mitra kerja tujuan" required></div><label class="col-sm-2 col-form-label">Alamat</label><div class="col-sm-10"><input type="text" class="form-control" id="alamat" name="alamat[]" placeholder="masukan alamat tujuan" required></div><label class="col-sm-2 col-form-label">Tanggal Pengiriman/SP</label><div class="col-sm-2"><input type="date" class="form-control" id="tglkirim" name="tglkirim[]" required></div><label class="col-sm-2 col-form-label">Tanggal Ekspedisi</label><div class="col-sm-2"><input type="date" value="{{old('alamat', $item->tglekspedisi)}}" class="form-control" id="tglekspedisi" name="tglekspedisi[]" ></div><div class="col-sm-2"></div><div class="col-sm-12"><button type="button" class="addtujuan btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></i></button><button type="button" class="remove btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
+    var peserta = '<input type="hidden" name="id[]" id="id" value=""><input type="hidden" name="idlaporan[]" id="idlaporan" value="{{$data->id}}"><input type="hidden" class="token" id="token" name="token[]" readonly><div><div class="form-group row"><label class="col-sm-2 col-form-label">Tujuan</label><div class="col-sm-10"><input type="text" class="form-control" id="tujuan" name="tujuan[]" placeholder="masukan mitra kerja tujuan" required></div><label class="col-sm-2 col-form-label">Alamat</label><div class="col-sm-10"><input type="text" class="form-control" id="alamat" name="alamat[]" placeholder="masukan alamat tujuan" required></div><label class="col-sm-2 col-form-label">Tanggal Pengiriman/SP</label><div class="col-sm-2"><input type="date" class="form-control" id="tglkirim" name="tglkirim[]" required></div><label class="col-sm-2 col-form-label">Tanggal Ekspedisi</label><div class="col-sm-2"><input type="date" value="{{old('alamat', $item->tglekspedisi)}}" class="form-control" id="tglekspedisi" name="tglekspedisi[]" ></div><div class="col-sm-2"></div><div class="col-sm-12"><button type="button" class="addtujuan btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></i></button><button type="button" class="remove btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
     
     $('.peserta').append(peserta);
   };

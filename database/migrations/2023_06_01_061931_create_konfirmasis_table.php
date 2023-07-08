@@ -25,7 +25,9 @@ class CreateKonfirmasisTable extends Migration
             $table->string('penerima')->nullable();
             $table->date('tglditerima')->nullable();
             $table->string('token')->nullable();
-            
+            $table->date('tglkirim')->nullable();
+            $table->date('tglekspedisi')->nullable();
+
             
         });
 

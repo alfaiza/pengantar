@@ -41,8 +41,11 @@
         <th>Judul Laporan</th>
         <th>Tujuan</th>
         <th>Aksi</th>
-        <th>Penerima</th>
+        <th>Tanggal SP</th>
+        <th>Tanggal Ekspedisi</th>
         <th>Tanggal Diterima</th>
+        <th>Penerima</th>
+        <th>Diinput oleh</th>
       </tr>
       </thead>
       <tbody>
@@ -60,8 +63,12 @@
             <a href="/editlaporan/{{$row->laporan->id}}" class="btn btn-warning mt-1"><i class="fas fa-edit"></i></a>
             <a href="/cetakqr/{{$row->id}}" target="_blank" class="btn btn-success"><i class="fas fa-print"></i></a>
           </td>
-          <td>{{$row->penerima}}</td>
+          <td>{{$row->tglkirim}}</td>
+          <td>{{$row->tglekspedisi}}</td>
           <td>{{$row->tglditerima}}</td>
+          <td>{{$row->penerima}}</td>
+
+          <td>{{$row->laporan['penginput']}}</td>
 
       </tr>
       @endforeach 

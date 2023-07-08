@@ -5,10 +5,15 @@
 <title>Surat Tanda Terima</title>
 	<style type="text/css">
 		body {font-family: arial;background-color: #ccc}
-		.badansurat {width: 980px;margin: 0 auto;background-color: #FFFFFF;height: 800px;padding-top: 50px;padding-left: 100px;padding-right: 100px}
+		.badansurat {width: 800px;margin: 0 auto;background-color: #FFFFFF;height: 980px;padding-top: 50px;padding-left: 100px;padding-right: 100px}
 	
 		.tengah {text-align: center;line-height: 5px}
-	
+        h1{
+            font-size:20px !important;
+            }
+        h2{
+            font-size:14.667px !important;
+            }
 	</style>
 </head>
 
@@ -18,7 +23,7 @@
 		<tr>
 		<td height="127"><img src="{{ asset('/bpkp.png') }}" width="180px" height="" alt=""/></td>
 		<td class="tengah">
-		  <h2>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h2>
+		  <h1>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h1>
 			<h2>PERWAKILAN PROVINSI NUSA TENGGARA BARAT</h2>
 			<p style="font-size: 15px">Jalan Majapahit 23A, Mataram 83116</p>
 			<p style="font-size: 15px">Telepon (0370) 638248 Faksimile (0370) 623505 </p>
@@ -67,7 +72,7 @@
             <td style="text-align: center">1 Laporan</td>
             <td>
                 <p>{{ $data->laporan->nolaporan }}</p> 
-                <p>Tgl {{ $data->laporan->tgllaporan }}</p>
+                <p>Tanggal {{ \Carbon\Carbon::parse($data->laporan->tgllaporan)->locale('id')->translatedformat('j F Y') }}</p>
             </td>
         </tr>
     </table>
@@ -75,31 +80,25 @@
 	
     <table width="100%">
         <tr>
-            <td width="6%">{!! QrCode::size(100)->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token) !!}</td>
+            <td width="15%"></td>
             <td width="55%"></td>
-            <td width="12%"></td>
-            <td width="27%" high="27%">
-            <p>Mataram, Mei 2023 </br>
-            Subkoordinator Pengelola BMN,</br>
+            <td width="0%"></td>
+            <td width="40%" high="27%">
+            <p>Mataram, {{ \Carbon\Carbon::parse($data->tglkirim)->locale('id')->translatedformat('j F Y') }} <br>
+            Subkoordinator Pengelola BMN,<br>
             Rumah Tangga dan Kearsipan</p>
-            </br>
-            </br>
+            <br>
+            <br>
             <p>Abdul Rahim Fahmi</p>
             </td>
-            <td>
-                
-        
+            <td>        
             </td>
         </tr>
-
-        
     </table>
-    <tr>
-        
-        {{-- <img src="data:image/png;base64,{{ base64_encode(QrCode::format('png')->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token)) }}"> --}}
-        
-        
-    </tr>
+    <table>
+        <tr width="10%">{!! QrCode::size(100)->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token) !!} </tr>
+        <td>Scan barcode untuk melakukan konfirmasi penerimaan.</td>
+    </table>
 </div>
 </body>
 </html>

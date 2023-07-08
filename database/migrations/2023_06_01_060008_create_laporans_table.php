@@ -21,6 +21,8 @@ class CreateLaporansTable extends Migration
             $table->string('judullaporan');
             $table->string('pengirim')->nullable();
             $table->date('tglkirim')->nullable();
+            $table->string('penginput')->nullable();
+            $table->string('status')->nullable();
         });
     }
 

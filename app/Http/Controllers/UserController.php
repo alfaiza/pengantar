@@ -9,6 +9,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function store(Request $request)
+    {
+
+    }
+    public function index()
+    {
+        // $showdata = Laporan::with('konfirmasi')->paginate(5); 
+        // dd($showdata);
+
+        $showdata = User::get();
+        // dd($showdata);
+        return view('admin.user',compact('showdata'));
+    }
     public function prosesregistrasi(Request $request){
         $data = $request->all();
         $nip = $request->nip;

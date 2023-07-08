@@ -39,7 +39,7 @@ class KonfirmasiController extends Controller
         return view ('qrcode', compact('data','url','img'));    
     }
 
-    public function deletepeserta(Request $request){
+    public function deletetujuan(Request $request){
         Konfirmasi::where('id',$request->id)->delete();
         // dd($bungkus);
    
@@ -51,4 +51,6 @@ class KonfirmasiController extends Controller
         Konfirmasi::find($id)->delete();
         return redirect('/laporan/show')->with('status', 'Tujuan Berhasil Di Hapus');
     }
+
+
 }

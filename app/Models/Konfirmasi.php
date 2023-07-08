@@ -14,6 +14,8 @@ class Konfirmasi extends Model
         'idlaporan',
         'tujuan',
         'alamat',
+        'tglkirim',
+        'tglekspedisi',
         'token'
     ];
 

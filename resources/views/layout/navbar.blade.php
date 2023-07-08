@@ -91,6 +91,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item @yield('useropen')" >
+            <a href="/user/" class="nav-link @yield('useractive')" >
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
+          </li>
 
           <li class="nav-item @yield('splaporanopen')">
             <a href="#" class="nav-link @yield('splaporanaktif')">
