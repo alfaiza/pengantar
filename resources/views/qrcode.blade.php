@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html>
 <head>
@@ -17,6 +18,19 @@
 	</style>
 </head>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> KOP SURAT </title>
+        <style type= "text/css">
+        body {font-family: arial; background-color : #ccc }
+        .rangkasurat {width : 980px;margin:0 auto;background-color : #fff;height: 1300px;padding: 20px;}
+        table {border-bottom : 5px solid # 000; padding: 2px}
+        .tengah {text-align : center;line-height: 5px;}
+         </style >
+    </head>
+>>>>>>> d9648f1c4f6beb8f3d4dece2dd4785a922378bb7
 <body>
 <div class="badansurat">
 	<table style="border-bottom: 5px solid #000000" width="100%" >
