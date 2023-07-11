@@ -4,7 +4,7 @@
         <title> KOP SURAT </title>
         <style type= "text/css">
         body {font-family: arial; background-color : #ccc }
-        .rangkasurat {width : 980px;margin:0 auto;background-color : #fff;height: 500px;padding: 20px;}
+        .rangkasurat {width : 980px;margin:0 auto;background-color : #fff;height: 1300px;padding: 20px;}
         table {border-bottom : 5px solid # 000; padding: 2px}
         .tengah {text-align : center;line-height: 5px;}
          </style >
