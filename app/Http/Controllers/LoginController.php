@@ -52,4 +52,9 @@ class LoginController extends Controller
     public function registrasi(){
             return view('registrasi');
         }
+
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
 }

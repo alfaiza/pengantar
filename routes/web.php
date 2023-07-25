@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/updatelaporan/{id}', [LaporanController::class, 'updatelaporan'])->name('updatelaporan');
         Route::post('/deletetujuan', [KonfirmasiController::class, 'deletetujuan'])->name('deletetujuan');
         Route::get('/destroytujuan/{id}', [KonfirmasiController::class, 'destroytujuan'])->name('destroytujuan');
+        Route::get('/dashboard',[LoginController::class, 'dashboard'])->name('dashboard');
     });
 });
 
