@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!doctype html>
 <html>
 <head>
@@ -6,7 +6,7 @@
 <title>Surat Tanda Terima</title>
 	<style type="text/css">
 		body {font-family: arial;background-color: #ccc}
-		.badansurat {width: 800px;margin: 0 auto;background-color: #FFFFFF;height: 980px;padding-top: 50px;padding-left: 100px;padding-right: 100px}
+		.badansurat {width: 800px;margin: 0 auto;background-color: #FFFFFF;height: 1200px;padding-top: 50px;padding-left: 100px;padding-right: 100px}
 	
 		.tengah {text-align: center;line-height: 5px}
         h1{
@@ -18,7 +18,6 @@
 	</style>
 </head>
 
-=======
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,7 +29,7 @@
         .tengah {text-align : center;line-height: 5px;}
          </style >
     </head>
->>>>>>> d9648f1c4f6beb8f3d4dece2dd4785a922378bb7
+
 <body>
 <div class="badansurat">
 	<table style="border-bottom: 5px solid #000000" width="100%" >
