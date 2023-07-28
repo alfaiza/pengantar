@@ -39,7 +39,7 @@
              <div class="icon">
                <i class="ion ion-android-document"></i>
              </div>
-             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+             <a href="/alllaporan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
            </div>
          </div>
          <!-- ./col -->
@@ -54,7 +54,7 @@
              <div class="icon">
                <i class="ion ion-archive"></i>
              </div>
-             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+             <a href="/laporan/show" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
            </div>
          </div>
          <!-- ./col -->
@@ -69,7 +69,7 @@
              <div class="icon">
                <i class="ion ion-android-send"></i>
              </div>
-             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+             <a href="/laporan/show" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
            </div>
          </div>
          <!-- ./col -->
@@ -84,7 +84,7 @@
              <div class="icon">
                <i class="ion ion-compose"></i>
              </div>
-             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+             <a href="/laporan/show" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
            </div>
          </div>
          <!-- ./col -->
