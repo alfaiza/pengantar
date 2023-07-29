@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Konfirmasi;
+use App\Models\Laporan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -55,6 +57,10 @@ class LoginController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $laporansp = Laporan::get();
+        $jumlahsp = Konfirmasi::get();
+        $ekspedisi = Konfirmasi::whereNotNull('tglekspedisi')->count();
+        $diterima = Konfirmasi::whereNotNull('tglditerima')->count();
+        return view('admin.dashboard',compact('laporansp','ekspedisi','jumlahsp','diterima'));
     }
 }
