@@ -61,7 +61,7 @@
             <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
             <a href="/konfirmasi/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>
             <a href="/editlaporan/{{$row->laporan->id}}" class="btn btn-warning mt-1"><i class="fas fa-edit"></i></a>
-            <a href="/cetakqr/{{$row->id}}" target="_blank" class="btn btn-success"><i class="fas fa-print"></i></a>
+            <a href="/cetakqr/{{$row->id}}" target="_blank" class="btn btn-success mt-1"><i class="fas fa-print"></i></a>
           </td>
           <td>{{$row->tglkirim}}</td>
           <td>{{$row->tglekspedisi}}</td>

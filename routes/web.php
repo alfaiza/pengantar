@@ -36,6 +36,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/deletetujuan', [KonfirmasiController::class, 'deletetujuan'])->name('deletetujuan');
         Route::get('/destroytujuan/{id}', [KonfirmasiController::class, 'destroytujuan'])->name('destroytujuan');
         Route::get('/dashboard',[LoginController::class, 'dashboard'])->name('dashboard');
+        Route::get('/edituser/{id}',[LoginController::class, 'edituser'])->name('edituser');
+        Route::post('/updateuser/{id}',[LoginController::class, 'updateuser'])->name('updateuser');
     });
 });
 

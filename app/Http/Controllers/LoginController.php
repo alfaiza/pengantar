@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Konfirmasi;
 use App\Models\Laporan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -62,5 +64,27 @@ class LoginController extends Controller
         $ekspedisi = Konfirmasi::whereNotNull('tglekspedisi')->count();
         $diterima = Konfirmasi::whereNotNull('tglditerima')->count();
         return view('admin.dashboard',compact('laporansp','ekspedisi','jumlahsp','diterima'));
+    }
+
+    public function edituser($id)
+    {
+        $data = User::find($id);
+        // dd($data);
+        return view ('admin.edituser', compact('data'));
+    }
+
+    public function updateuser(Request  $request, $id)
+    {
+        $ambildata = $request->all();
+        $data = User::find($id);
+        $password = $request->password;
+        $data->password = Hash::make($password);
+        $data->name=$request->input('name');
+        $data->nip=$request->input('nip');
+        $data->bidang=$request->input('bidang');
+        $data->email=$request->input('email');
+        $data->save();
+        // dd($data);
+        return redirect ('user')->with('success','User Berhasil diupdate');
     }
 }
