@@ -53,7 +53,7 @@ Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registr
 Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->name('prosesregistrasi');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/modal', function () {
