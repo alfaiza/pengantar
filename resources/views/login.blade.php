@@ -16,6 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <style>
+    
     table{
       height: 100%;
       width: 100%;
@@ -35,6 +36,12 @@
     }
     .logo-amandok {
       margin-left: 20%;
+    }
+    .table2{
+      
+    }
+    table2, th, td {
+      padding: 8px 40px;
     }
   </style>
 </head>
@@ -81,9 +88,10 @@
         </div>
         
           <!-- /.col -->
+
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
+           <a><button type="submit" class="btn btn-primary btn-block">Sign In</button></a>
+            </div>
           <!-- /.col -->
         </div>
       </form>
