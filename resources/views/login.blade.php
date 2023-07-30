@@ -90,17 +90,8 @@
           <!-- /.col -->
 
           <div class="col-4">
-          <table class="table2">
-          <tr>
-          <td>
-            <a><button type="submit" class="btn btn-primary btn-block">SignIn</button></a>
-          </td>
-          <td>
-            <a><button type="submit" class="btn btn-primary btn-block">Register</button></a>
-          </td>
-        </tr>
-          </table>
-          </div>
+           <a><button type="submit" class="btn btn-primary btn-block">Sign In</button></a>
+            </div>
           <!-- /.col -->
         </div>
       </form>
