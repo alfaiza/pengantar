@@ -30,7 +30,6 @@ Route::group(['middleware' => ['auth']], function() {
         Route::resource('/laporan', LaporanController::class);
         Route::get('/alllaporan', [LaporanController::class, 'alllaporan'])->name('alllaporan');
         Route::get('suratpengantar', [LaporanController::class, 'suratpengantar'])->name('suratpengantar');
-        Route::post('/konfirmasi/{id}', [KonfirmasiController::class, 'konfirmasi'])->name('konfirmasi');
         Route::get('/editlaporan/{id}', [LaporanController::class, 'editlaporan'])->name('editlaporan');
         Route::post('/updatelaporan/{id}', [LaporanController::class, 'updatelaporan'])->name('updatelaporan');
         Route::post('/deletetujuan', [KonfirmasiController::class, 'deletetujuan'])->name('deletetujuan');
@@ -44,6 +43,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 //Konfirmasi
 Route::get('/konfirmasi/{id}/{token}', [KonfirmasiController::class, 'tampilkansptoken'])->name('tampilkansptoken');
+Route::post('/konfirmasi/{id}', [KonfirmasiController::class, 'konfirmasi'])->name('konfirmasi');
 
 // Authentication
 Route::get('/login', [LoginController::class, 'index'])->name('login');
