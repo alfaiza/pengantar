@@ -17,7 +17,6 @@
   <!-- jQuery 3.6-->
   <script src="{{asset('plugins/jquery/jquery-3.6.0.min.js')}}"></script>
   {{-- <script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script> --}}
- 
   <!-- Bootstrap 4 -->
   <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

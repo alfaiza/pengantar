@@ -31,7 +31,7 @@
             <td>{{$row->nip}}</td>
             <td>
               <a href="/edituser/{{$row->id}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-              <a href="#" id= "detail" class="btn btn-danger detail" title="detail" data-id="{{$row->id}}" data-laporan="{{$row->judullaporan}}" data-alamat="{{$row->nolaporan}}"><i class="fas fa-trash"></i></a>
+              <a href="#" id= "detail" class="btn btn-danger detail" title="hapus user" data-id="{{$row->id}}" data-laporan="{{$row->judullaporan}}" data-alamat="{{$row->nolaporan}}"><i class="fas fa-trash"></i></a>
             
               {{-- <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
               <a href="/konfirmasi/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>

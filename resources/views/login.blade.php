@@ -65,7 +65,7 @@
 <td>
 <div class="login-box" >
   <div class="login-logo">
-    <a href="{{ route('login') }}"><b>SURAT</b> PENGANTAR</a>
+    <a><b>SURAT</b> PENGANTAR</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
