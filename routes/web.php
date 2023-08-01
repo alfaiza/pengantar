@@ -37,6 +37,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/dashboard',[LoginController::class, 'dashboard'])->name('dashboard');
         Route::get('/edituser/{id}',[LoginController::class, 'edituser'])->name('edituser');
         Route::post('/updateuser/{id}',[LoginController::class, 'updateuser'])->name('updateuser');
+        //Registrasion
+        Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
+        Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->name('prosesregistrasi');
     });
 });
 
@@ -50,9 +53,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/proseslogin', [LoginController::class, 'proseslogin'])->name('proseslogin');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-//Registrasion
-Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
-Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->name('prosesregistrasi');
+
 
 Route::get('/', function () {
     return view('login');
