@@ -33,6 +33,7 @@ class UserController extends Controller
         $user->unit = $data['unit'];
         $user->password = Hash::make($password);
         $user->email = $data['email'];
+        $user->bidang = $data['bidang'];
 
         // $user->save();
         if($user::where('nip',$nip)->count()){
@@ -41,5 +42,9 @@ class UserController extends Controller
             $user->save();
             return redirect()->route('login')->with('success','Berhasil di Registrasi');
         }
+    }
+    public function deleteuser($id){
+        User::find($id)->delete();
+        return redirect('/user')->with('status', 'User Berhasil Dihapus');
     }
 }

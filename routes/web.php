@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function() {
         //Registrasion
         Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
         Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->name('prosesregistrasi');
+        Route::get('/deleteuser/{id}', [UserController::class, 'deleteuser'])->name('deleteuser');
     });
 });
 

@@ -87,4 +87,5 @@ class LoginController extends Controller
         // dd($data);
         return redirect ('user')->with('success','User Berhasil diupdate');
     }
+    
 }

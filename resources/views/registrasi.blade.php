@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="input-group mb-3">
-            <input type="name" class="form-control @error('bidang') is-invalid @enderror" placeholder="Nama" name="bidang" id="bidang" autofocus required value="Umum" default="umum">
+            <input type="name" class="form-control @error('bidang') is-invalid @enderror" placeholder="Bidang" name="bidang" id="bidang" required value="Umum">
             <div class="input-group-append">
               <div class="input-group-text">
               </div>

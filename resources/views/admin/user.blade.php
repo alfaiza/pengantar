@@ -3,7 +3,21 @@
 @section('useractive', 'active')
 
 @section('isibody')
-
+<script>
+  @if(Session::has('status'))
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    })
+    
+      Toast.fire({
+        icon: 'success',
+        title: 'User telah dihapus.'
+      })
+  @endif
+</script>
 <div class="card">
     <div class="card-header">
       <h3 class="card-title"><b>User</b></h3>
@@ -19,6 +33,7 @@
           <th>Nama</th>
           <th>Email</th>
           <th>NIP</th>
+          <th>Bagian</th>
           <th>Aksi</th>
           
         </tr>
@@ -30,9 +45,10 @@
             <th>{{ $row->name }}</th>  
             <td>{{$row->email}}</td>
             <td>{{$row->nip}}</td>
+            <td>{{$row->bidang}}</td>
             <td>
               <a href="/edituser/{{$row->id}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-              <a href="#" id= "detail" class="btn btn-danger detail" title="hapus user" data-id="{{$row->id}}" data-laporan="{{$row->judullaporan}}" data-alamat="{{$row->nolaporan}}"><i class="fas fa-trash"></i></a>
+              <a href="#" id= "delete" class="btn btn-danger delete" title="hapus user" data-id="{{$row->id}}" data-user="{{$row->name}}" data-bidang="{{$row->bidang}}"><i class="fas fa-trash"></i></a>
             
               {{-- <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
               <a href="/konfirmasi/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>
@@ -54,4 +70,37 @@
     </div>
     <!-- /.card-body -->
   </div>
+  <script>
+    $('.delete').click( function(){
+      var userid = $(this).attr('data-id');
+      var user = $(this).attr('data-user');
+      var bidang = $(this).attr('data-bidang');
+  
+      swal.fire({
+            title: "YAKIN?",
+            text: "kamu akan menghapus akun "+user+" dari bidang "+bidang+" ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+      })
+          .then((result) => {
+            if (result.isConfirmed) {
+              window.location= "/deleteuser/"+userid+""
+              swal.fire({
+                title:"Data berhasil dihapus!",
+                icon: "success",
+              });
+            } else {
+              swal.fire({
+                icon:"",
+                text:"User tidak jadi dihapus"});
+            }
+          });
+      });
+                    
+  </script>
 @endsection
