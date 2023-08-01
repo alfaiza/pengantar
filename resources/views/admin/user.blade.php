@@ -10,7 +10,8 @@
     </div>          
     <!-- /.card-header -->
     <div class="card-body">
-      
+      <a href="/registrasi" id= "detail" class="btn btn-success" title="hapus user" data-id="" data-laporan="" data-alamat=""><i class="fas fa-plus"></i> tambah user</a>
+            
       <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
