@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Konfirmasi;
 use App\Models\Laporan;
+use Barryvdh\DomPDF\PDF as PDF;
 use Illuminate\Http\Request;
+
 
 use Illuminate\Support\Str;
 class LaporanController extends Controller
@@ -37,15 +39,12 @@ class LaporanController extends Controller
                     'tglkirim' => $data['tglkirim'][$item],
                     'token' => $token
                 );
-                
                 Konfirmasi::create($data2);
                 // $token = new Konfirmasi;
                 // $token->token = Str::random(16);
                 // $token->save();
-               
             }
         }
-
         return redirect()->back()->with('success', 'data berhasil diinput');
     }
 
