@@ -17,13 +17,17 @@
 <div class="login-box">
 
       <div class="card-header">
-        <h3 class="card-title">Konfirmasi Laporan</h3>
+        <h3 class="card-title">Konfirmasi Terima Laporan</h3>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
       <form action="/konfirmasi/{{ $data->id }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nomor SP</label>
+            <input type="text" value="TU.00/SP-{{old('subunit', $data->id)}}/PW23/1/2023" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nomor Laporan">
+          </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Nomor Laporan</label>
             <input type="text" value="{{old('subunit', $data->laporan->nolaporan)}}" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nomor Laporan">
@@ -40,7 +44,12 @@
 
           <div class="form-group">
             <label for="exampleInputPassword1">Penerima</label>
-            <input type="text" value="{{old('subunit', $data->penerima)}}" name="penerima" id="penerima" class="form-control" id="exampleInputPassword1" placeholder="Penerima">
+            <input type="text" value="{{old('subunit', $data->penerima)}}" name="penerima" id="penerima" class="form-control" id="exampleInputPassword1" placeholder="Nama Penerima">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Jabatan</label>
+            <input type="text" value="{{old('jabatanpenerima', $data->jabatanpenerima)}}" name="jabatanpenerima" id="jabatanpenerima" class="form-control" id="exampleInputPassword1" placeholder="Jabatan Penerima">
           </div>
 
             <div class="form-group">
@@ -56,6 +65,10 @@
           <div class="form-group">
             <label for="exampleInputPassword1">Penerima</label>
             <input type="text" value="{{old('penerima', $data->penerima)}}" name="penerima" readonly="readonly" id="penerima" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Jabatan</label>
+            <input type="text" value="{{old('jabatanpenerima', $data->jabatanpenerima)}}" name="jabatanpenerima" readonly="readonly" id="jabatanpenerima" class="form-control" id="exampleInputPassword1">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Tanggal Diterima</label>

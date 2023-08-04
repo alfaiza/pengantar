@@ -23,6 +23,7 @@ class CreateKonfirmasisTable extends Migration
             $table->string('tujuan');
             $table->string('alamat');
             $table->string('penerima')->nullable();
+            $table->string('jabatanpenerima')->nullable();
             $table->date('tglditerima')->nullable();
             $table->string('token')->nullable();
             $table->date('tglkirim')->nullable();

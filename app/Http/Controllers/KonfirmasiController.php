@@ -26,6 +26,7 @@ class KonfirmasiController extends Controller
         $data = Konfirmasi::find($id);
         $data->penerima = $request->penerima;
         $data->tglditerima = $request->tglditerima;
+        $data->jabatanpenerima = $request->jabatanpenerima;
         $data->save();
 
         return redirect()->back()->with('success', 'data berhasil diinput');

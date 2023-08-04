@@ -52,7 +52,7 @@
       @foreach ($showdata as $index => $row)
       <tr>
           <th>{{ $loop->iteration }}</th>
-          <th>SP-{{ $row->id }}/PW23/1/2023</th>  
+          <th>TU.00/SP-{{ $row->id }}/PW23/1/2023</th>  
           <td>{{$row->laporan['nolaporan']}}</td>
           <td>{{$row->laporan['judullaporan']}}</td>
           <td>{{$row->tujuan}}</td>       
