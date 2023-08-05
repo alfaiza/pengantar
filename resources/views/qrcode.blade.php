@@ -37,14 +37,12 @@
 		<td height="127"><img src="{{ asset('/bpkp.png') }}" width="180px" height="" alt=""/></td>
 		<td class="tengah">
 		  <h1>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h1>
-			<h2>PERWAKILAN PROVINSI NUSA TENGGARA BARAT</h2>
+			<h1>PERWAKILAN PROVINSI NUSA TENGGARA BARAT</h1>
 			<p style="font-size: 15px">Jalan Majapahit 23A, Mataram 83116</p>
 			<p style="font-size: 15px">Telepon (0370) 638248 Faksimile (0370) 623505 </p>
 			<p><a style="font-style: italic">Email</a>: <a href="">ntb@bpkp.go.id</a>,<a style="font-style: italic"> Website: </a><a href="https://www.bpkp.go.id/ntb">www.bpkp.go.id/ntb</a></p>
 		</td>
-		</tr>
-	
-	
+		</tr>	
 	</table>
     <table width="100%">
         <tr>
@@ -64,7 +62,7 @@
         </tr>
     </table>
 	
-    <table border="" cellpadding="7" width="100%" style="border-collapse: collapse; vertical-align: top">
+    <table border="" cellpadding="5" width="100%" style="border-collapse: collapse; vertical-align: top">
         <tr style="text-align: center">
             <td width="6%">No Urut</td>
             <td width="55%">Jenis Surat atau Barang yang di kirim</td>
@@ -94,11 +92,11 @@
     <table width="100%">
         <tr>
             <td width="15%"></td>
-            <td width="55%"></td>
+            <td width="53%"></td>
             <td width="0%"></td>
-            <td width="40%" high="27%">
+            <td width="42%" high="27%">
             <p>Mataram, {{ \Carbon\Carbon::parse($data->tglkirim)->locale('id')->translatedformat('j F Y') }} <br>
-            Subkoordinator Pengelola BMN,<br>
+            Subkoordinator Pengelolaan BMN,<br>
             Rumah Tangga dan Kearsipan</p>
             <br>
             <br>
