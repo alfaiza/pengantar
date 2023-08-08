@@ -34,13 +34,13 @@
 <div class="badansurat">
 	<table style="border-bottom: 5px solid #000000" width="100%" >
 		<tr>
-		<td height="127"><img src="{{ asset('/bpkp.png') }}" width="180px" height="" alt=""/></td>
+		<td height="90"><img src="{{ asset('/bpkp.png') }}" width="180px" height="" alt=""/></td>
 		<td class="tengah">
 		  <h1>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h1>
 			<h1>PERWAKILAN PROVINSI NUSA TENGGARA BARAT</h1>
-			<p style="font-size: 15px">Jalan Majapahit 23A, Mataram 83116</p>
-			<p style="font-size: 15px">Telepon (0370) 638248 Faksimile (0370) 623505 </p>
-			<p><a style="font-style: italic">Email</a>: <a href="">ntb@bpkp.go.id</a>,<a style="font-style: italic"> Website: </a><a href="https://www.bpkp.go.id/ntb">www.bpkp.go.id/ntb</a></p>
+            <p></p>
+			<p style="font-size: 12px">Jalan Majapahit 23A, Mataram 83116, Telepon (0370) 638248 Faksimile (0370) 623505 </p>
+			<p style="font-size: 12px"><a style="font-style: italic">Email</a>: <a href="">ntb@bpkp.go.id</a>,<a style="font-style: italic"> Website: </a><a href="https://www.bpkp.go.id/ntb">www.bpkp.go.id/ntb</a> </p>
 		</td>
 		</tr>	
 	</table>
@@ -106,9 +106,16 @@
             </td>
         </tr>
     </table>
+
+    <br/>
+    <br/>
     <table>
-        <tr width="10%">{!! QrCode::size(100)->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token) !!} </tr>
-        <td>Scan barcode untuk melakukan konfirmasi penerimaan.</td>
+        <tr>
+        <td><h3>Mohon untuk scan QR Code untuk mengkonfirmasi dokumen/barang yang telah diterima</h3></td>
+        </tr>
+        <tr>
+        <td width="10%">{!! QrCode::size(100)->merge(public_path('bpkp.png'), 0.03,true)->generate($url.'/'.$data->id.'/'.$data->token) !!} </td>
+    </tr>
     </table>
 </div>
 </body>
