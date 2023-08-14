@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('111'),
             'nip' => '111',
             'unit' => 'Perwakilan BPKP Provinsi NTB',
-            'level' => '4',
+            'level' => '1',
             'bidang' => 'Umum'
             ]
         ]);

@@ -25,7 +25,7 @@ use App\Http\Controllers\UserController;
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/cetakqr/{id}', [KonfirmasiController::class, 'cetakqr'])->name('cetakqr');
 
-    Route::group(['middleware' => ['hakakses:4']], function() {
+    Route::group(['middleware' => ['hakakses:4,1']], function() {
         Route::resource('/user', UserController::class);
         Route::resource('/laporan', LaporanController::class);
         Route::get('/alllaporan', [LaporanController::class, 'alllaporan'])->name('alllaporan');
@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/dashboard',[LoginController::class, 'dashboard'])->name('dashboard');
         Route::get('/edituser/{id}',[LoginController::class, 'edituser'])->name('edituser');
         Route::post('/updateuser/{id}',[LoginController::class, 'updateuser'])->name('updateuser');
+    });
+    Route::group(['middleware' => ['hakakses:1']], function() {
         //Registrasion
         Route::get('/registrasi', [LoginController::class, 'registrasi'])->name('registrasi');
         Route::post('/prosesregistrasi', [UserController::class, 'prosesregistrasi'])->name('prosesregistrasi');

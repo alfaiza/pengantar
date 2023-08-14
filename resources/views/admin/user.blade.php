@@ -24,7 +24,10 @@
     </div>          
     <!-- /.card-header -->
     <div class="card-body">
+      @if ( Auth::user()->level == 1 )
       <a href="/registrasi" id= "detail" class="btn btn-success" title="hapus user" data-id="" data-laporan="" data-alamat=""><i class="fas fa-plus"></i> tambah user</a>
+      
+      @endif
             
       <table id="example1" class="table table-bordered table-striped">
         <thead>
@@ -47,9 +50,14 @@
             <td>{{$row->nip}}</td>
             <td>{{$row->bidang}}</td>
             <td>
+              @if ($row->id == Auth::user()->id OR Auth::user()->level == 1)
               <a href="/edituser/{{$row->id}}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+              @endif
+              
+              @if (Auth::user()->level == 1)
               <a href="#" id= "delete" class="btn btn-danger delete" title="hapus user" data-id="{{$row->id}}" data-user="{{$row->name}}" data-bidang="{{$row->bidang}}"><i class="fas fa-trash"></i></a>
-            
+              @endif
+              
               {{-- <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
               <a href="/konfirmasi/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>
               <a href="/editlaporan/{{$row->laporan->id}}" class="btn btn-warning mt-1"><i class="fas fa-edit"></i></a>
