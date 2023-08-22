@@ -24,6 +24,7 @@ class LaporanController extends Controller
         $laporan->tgllaporan = $data['tgllaporan'];
         $laporan->judullaporan = $data['judullaporan'];
         $laporan->penginput = $data['penginput'];
+        $laporan->tglpenyerahan = $data['tglpenyerahan'];
         // $laporan->nolaporan = $data['pengirim'];
         // $laporan->nolaporan = $data['tglkirim'];
         $laporan->save();
@@ -36,7 +37,6 @@ class LaporanController extends Controller
                     'idlaporan' => $laporan->id,
                     'tujuan' => $data['tujuan'][$item],
                     'alamat' => $data['alamat'][$item],
-                    'tglkirim' => $data['tglkirim'][$item],
                     'token' => $token
                 );
                 Konfirmasi::create($data2);
@@ -95,11 +95,11 @@ class LaporanController extends Controller
                     'tujuan' => $ambildata['tujuan'][$item],
                     'alamat' => $ambildata['alamat'][$item],
                     'tglkirim' => $ambildata['tglkirim'][$item],
-                    'tglekspedisi' => $ambildata['tglekspedisi'][$item],
+                    'nomorsp' => $ambildata['nomorsp'][$item],
 
                     'token' =>$token
                 );
-                Konfirmasi::upsert($data2,['id','idlaporan','tujuan','alamat','tglekspedisi','tglkirim'],['tujuan','alamat','tglekspedisi','tglkirim']);
+                Konfirmasi::upsert($data2,['id','idlaporan','tujuan','alamat','tglkirim'.'nomorsp'],['tujuan','alamat','tglkirim','nomorsp']);
             }
             // dd($data2);
                         

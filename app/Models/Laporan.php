@@ -12,6 +12,7 @@ class Laporan extends Model
         'judullaporan',
         'nolaporan',
         'tgllaporan',
+        'tglpenyerahan',
         
     ];
 

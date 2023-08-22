@@ -65,6 +65,12 @@
             <input type="text" class="form-control" id="judullaporan" name="judullaporan" value="{{old('judullaporan')}}" placeholder="Ketik judul laporan" required>
           </div>
         </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Tanggal Penyerahan Laporan</label>
+          <div class="col-sm-2">
+            <input type="date" class="form-control" id="tglpenyerahan" name="tglpenyerahan" value="{{old('tglpenyerahan')}}" required>
+          </div>
+        </div>
 
         
         <div class="form-group row rowpeserta">
@@ -76,10 +82,7 @@
             <div class="col-sm-10">
               <input type="text" class="form-control" id="alamat" name="alamat[]" value="{{old('alamat')}}" placeholder="masukan alamat tujuan" required>
             </div>
-            <label class="col-sm-2 col-form-label">Tanggal Pengiriman/SP</label>
-            <div class="col-sm-10">
-              <input type="date" value="<?= date('Y-m-d') ?>" class="form-control" id="tglkirim" name="tglkirim[]" required>
-            </div>
+            
 
             
             <div class="col-sm-12">
@@ -115,7 +118,7 @@
     addtujuan();
   });
   function addtujuan(){
-    var peserta = '<input type="hidden" class="token" id="token" name="token[]" readonly><div><div class="form-group row"><label class="col-sm-2 col-form-label">Tujuan</label><div class="col-sm-10"><input type="text" class="form-control" id="tujuan" name="tujuan[]" placeholder="masukan mitra kerja tujuan" required></div><label class="col-sm-2 col-form-label">Alamat</label><div class="col-sm-10"><input type="text" class="form-control" id="alamat" name="alamat[]" placeholder="masukan alamat tujuan" required></div><label class="col-sm-2 col-form-label">Tanggal Pengiriman/SP</label> <div class="col-sm-10"> <input type="date" value="<?= date('Y-m-d') ?>" class="form-control" id="tglkirim" name="tglkirim[]" placeholder="masukan alamat tujuan" required> </div><div class="col-sm-2"></div><div class="col-sm-12"><button type="button" class="addtujuan btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></i></button><button type="button" class="remove btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
+    var peserta = '<input type="hidden" class="token" id="token" name="token[]" readonly><div><div class="form-group row"><label class="col-sm-2 col-form-label">Tujuan</label><div class="col-sm-10"><input type="text" class="form-control" id="tujuan" name="tujuan[]" placeholder="masukan mitra kerja tujuan" required></div><label class="col-sm-2 col-form-label">Alamat</label><div class="col-sm-10"><input type="text" class="form-control" id="alamat" name="alamat[]" placeholder="masukan alamat tujuan" required></div><div class="col-sm-2"></div><div class="col-sm-12"><button type="button" class="addtujuan btn btn-primary" style="float: right;"><i class="fas fa-plus"></i></i></button><button type="button" class="remove btn btn-danger" style="float: right;"><i class="fas fa-trash-alt"></i></button></div></div></div>';
     $('.peserta').append(peserta);
   };
   $('body').on('click', '.remove', function(){

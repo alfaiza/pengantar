@@ -41,8 +41,8 @@
         <th>Judul Laporan</th>
         <th>Tujuan</th>
         <th>Aksi</th>
+        <th>Tanggal Penyerahan</th>
         <th>Tanggal SP</th>
-        <th>Tanggal Ekspedisi</th>
         <th>Tanggal Diterima</th>
         <th>Penerima</th>
         <th>Diinput oleh</th>
@@ -52,7 +52,13 @@
       @foreach ($showdata as $index => $row)
       <tr>
           <th>{{ $loop->iteration }}</th>
-          <th>TU.00/SP-{{ $row->id }}/PW23/1/2023</th>  
+          @if (empty($row->nomorsp ))
+          <th></th>
+          @else
+          <th>TU.00/SP-{{ $row->nomorsp }}/PW23/1/2023</th>
+          @endif
+            
+          
           <td>{{$row->laporan['nolaporan']}}</td>
           <td>{{$row->laporan['judullaporan']}}</td>
           <td>{{$row->tujuan}}</td>       
@@ -61,10 +67,14 @@
             <a href="#" id= "delete" class="btn btn-danger delete" title="Hapus" data-id="{{$row->id}}" data-tujuan="{{$row->tujuan}}" data-alamat="{{$row->alamat}}"><i class="fas fa-trash"></i></a>
             <a href="/konfirmasi/{{$row->id}}/{{ $row->token }}" class="btn btn-success mt-1"><i class="fas fa-book"></i></a>
             <a href="/editlaporan/{{$row->laporan->id}}" class="btn btn-warning mt-1"><i class="fas fa-edit"></i></a>
+            @if (empty($row->tglkirim ))
+                @else
             <a href="/cetakqr/{{$row->id}}" target="_blank" class="btn btn-success mt-1"><i class="fas fa-print"></i></a>
+            @endif
+            
           </td>
+          <td>{{$row->laporan['tglpenyerahan']}}</td>
           <td>{{$row->tglkirim}}</td>
-          <td>{{$row->tglekspedisi}}</td>
           <td>{{$row->tglditerima}}</td>
           <td>{{$row->penerima}}</td>
 
@@ -100,24 +110,7 @@
  <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
  <script src="{{asset('plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
-<script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthC  hange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example1').DataTable({
-        "paging": true,
-        "bDestroy": true,
-        "lengthChange": true,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": true,
-        "responsive": true,
-      });
-    });
-  </script>
+
 
 <script>
   $('.delete').click( function(){
@@ -152,7 +145,23 @@
     });
                   
 </script>
-
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 
 
     
