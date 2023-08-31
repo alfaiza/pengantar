@@ -60,10 +60,10 @@ class LoginController extends Controller
     public function dashboard()
     {
         $laporansp = Laporan::get();
-        $jumlahsp = Konfirmasi::get();
-        $ekspedisi = Konfirmasi::whereNotNull('tglekspedisi')->count();
+        $tujuan = Konfirmasi::get();
+        $jumlahsp = Konfirmasi::whereNotNull('nomorsp')->count();
         $diterima = Konfirmasi::whereNotNull('tglditerima')->count();
-        return view('admin.dashboard',compact('laporansp','ekspedisi','jumlahsp','diterima'));
+        return view('admin.dashboard',compact('laporansp','tujuan','jumlahsp','diterima'));
     }
 
     public function edituser($id)

@@ -10,7 +10,7 @@
      <div class="container-fluid">
        <div class="row mb-2">
          <div class="col-sm-6">
-           <h1 class="m-0">Monitoring Laporan</h1>
+           <h1 class="m-0">Monitoring Dokumen</h1>
          </div><!-- /.col -->
          <div class="col-sm-6">
            <ol class="breadcrumb float-sm-right">
@@ -34,7 +34,7 @@
              <div class="inner">
                <h3>{{ $laporansp->count() }}</h3>
 
-               <p>Jumlah Laporan</p>
+               <p>Jumlah Dokumen</p>
              </div>
              <div class="icon">
                <i class="ion ion-android-document"></i>
@@ -47,9 +47,9 @@
            <!-- small box -->
            <div class="small-box bg-success">
              <div class="inner">
-               <h3>{{ $jumlahsp->count() }}<sup style="font-size: 20px"></sup></h3>
+               <h3>{{ $tujuan->count() }}<sup style="font-size: 20px"></sup></h3>
 
-               <p>Jumlah SP</p>
+               <p>Jumlah Tujuan</p>
              </div>
              <div class="icon">
                <i class="ion ion-archive"></i>
@@ -62,9 +62,9 @@
            <!-- small box -->
            <div class="small-box bg-warning">
              <div class="inner">
-               <h3>{{ $ekspedisi }}</h3>
+               <h3>{{ $jumlahsp }}</h3>
 
-               <p>Laporan Dikirim/Ekspedisi</p>
+               <p>Jumlah SP / Dokumen dikirim</p>
              </div>
              <div class="icon">
                <i class="ion ion-android-send"></i>
@@ -79,7 +79,7 @@
              <div class="inner">
                <h3>{{ $diterima }}</h3>
 
-               <p>Laporan Diterima</p>
+               <p>Dokumen Diterima</p>
              </div>
              <div class="icon">
                <i class="ion ion-compose"></i>

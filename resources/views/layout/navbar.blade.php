@@ -111,7 +111,7 @@
               <li class="nav-item">
                 <a href="/laporan/create" class="nav-link @yield('inputlaporanaktif')">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Input Laporan</p>
+                  <p>Input Dokumen</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -123,7 +123,7 @@
               <li class="nav-item">
                 <a href="/alllaporan" class="nav-link @yield('cekalllaporan')" >
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Cek Laporan</p>
+                  <p>Cek Dokumen</p>
                 </a>
               </li>
             </ul>

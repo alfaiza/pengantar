@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Tanggal Penyerahan Laporan</label>
+          <label class="col-sm-2 col-form-label">Tanggal Penyerahan Dokumen</label>
           <div class="col-sm-2">
             <input type="date" class="form-control" id="tglpenyerahan" name="tglpenyerahan" value="{{old('tglpenyerahan')}}" required>
           </div>
