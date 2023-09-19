@@ -39,8 +39,9 @@
 		  <h1>BADAN PENGAWASAN KEUANGAN DAN PEMBANGUNAN</h1>
 			<h1>PERWAKILAN PROVINSI NUSA TENGGARA BARAT</h1>
             <p></p>
-			<p style="font-size: 12px">Jalan Majapahit 23A, Mataram 83116, Telepon (0370) 638248 Faksimile (0370) 623505 </p>
-			<p style="font-size: 12px"><a style="font-style: italic">Email</a>: <a href="">ntb@bpkp.go.id</a>,<a style="font-style: italic"> Website: </a><a href="https://www.bpkp.go.id/ntb">www.bpkp.go.id/ntb</a> </p>
+			<p style="font-size: 12px">Jalan Majapahit 23A, Mataram 83116</p>
+			<p style="font-size: 12px">Telepon (0370) 638248 Faksimile (0370) 623505 </p>
+            <p style="font-size: 12px"><a style="font-style: italic">Email</a>: <a href="">ntb@bpkp.go.id</a>,<a style="font-style: italic"> Website: </a><a href="https://www.bpkp.go.id/ntb">www.bpkp.go.id/ntb</a> </p>
 		</td>
 		</tr>	
 	</table>
