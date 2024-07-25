@@ -44,7 +44,7 @@
       @foreach ($showdata as $index => $row)
       <tr>
           <th>{{ $loop->iteration }}</th>
-          {{-- <th>SP-{{ $row->id }}/PW23/1/2023</th>   --}}
+          {{-- <th>SP-{{ $row->id }}/PW23/1/2024</th>   --}}
           <td>{{$row->nolaporan}} tanggal {{$row->tgllaporan}}</td>
           <td>{{$row->judullaporan}}</td>
           <td>{{$row->konfirmasi->count()}}</td>       
