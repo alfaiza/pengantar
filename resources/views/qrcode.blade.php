@@ -101,7 +101,7 @@
             Rumah Tangga dan Kearsipan</p>
             <br>
             <br>
-            <p>Bonik Latup Lisa</p>
+            <p>Gilang Tegara Megantara</p>
             </td>
             <td>        
             </td>
