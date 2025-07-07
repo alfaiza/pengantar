@@ -101,7 +101,7 @@
             Rumah Tangga dan Kearsipan</p>
             <br>
             <br>
-            <p>Gilang Tegara Megantara</p>
+            <p>Gilang Tegar Megantara</p>
             </td>
             <td>        
             </td>
