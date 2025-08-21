@@ -17,7 +17,7 @@
 <div class="login-box">
 
       <div class="card-header">
-        <h3 class="card-title">Konfirmasi Terima Laporan</h3>
+        <h3 class="card-title">Konfirmasi Terima Dokumen</h3>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
@@ -29,11 +29,11 @@
             <input type="text" value="TU.00/SP-{{old('subunit', $data->id)}}/PW23/1/2024" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nomor Laporan">
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Nomor Laporan</label>
+            <label for="exampleInputEmail1">Nomor Dokumen</label>
             <input type="text" value="{{old('subunit', $data->laporan->nolaporan)}}" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nomor Laporan">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Judul Laporan</label>
+            <label for="exampleInputPassword1">Judul Dokumen</label>
             <input type="text" value="{{old('subunit', $data->laporan->judullaporan)}}" readonly="readonly" class="form-control" id="exampleInputPassword1" placeholder="Judul Laporan">
           </div>
           <div class="form-group">
