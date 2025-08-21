@@ -39,7 +39,7 @@
 <div class="container">
 
   <div class="card-header">
-    <h3 class="card-title"><b>Input Informasi Laporan</b></h3>
+    <h3 class="card-title"><b>Input Informasi Dokumen</b></h3>
   </div>
 
   <div class="card-body">
@@ -48,21 +48,21 @@
 
       @csrf 
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Nomor Laporan</label>
+          <label class="col-sm-2 col-form-label">Nomor Dokumen</label>
           <input type="hidden" class="form-control" id="penginput" name="penginput" value="{{auth()->user()->name}}" required>
           
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="nolaporan" name="nolaporan" value="{{old('nolaporan')}}" placeholder="Nomor Laporan" required>
+            <input type="text" class="form-control" id="nolaporan" name="nolaporan" value="{{old('nolaporan')}}" placeholder="Nomor Dokumen" required>
           </div>
-          <label class="col-sm-2 col-form-label">Tanggal Laporan</label>
+          <label class="col-sm-2 col-form-label">Tanggal Dokumen</label>
               <div class="col-sm-2">
                 <input type="date" class="form-control" id="tgllaporan" name="tgllaporan" value="{{old('tgllaporan')}}" placeholder="Bidang/Sub Unit" required>
               </div>
         </div>
         <div class="form-group row">
-          <label class="col-sm-2 col-form-label">Judul Laporan</label>
+          <label class="col-sm-2 col-form-label">Judul Dokumen</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="judullaporan" name="judullaporan" value="{{old('judullaporan')}}" placeholder="Ketik judul laporan" required>
+            <input type="text" class="form-control" id="judullaporan" name="judullaporan" value="{{old('judullaporan')}}" placeholder="Ketik judul Dokumen" required>
           </div>
         </div>
         <div class="form-group row">
