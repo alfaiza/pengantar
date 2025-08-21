@@ -25,7 +25,7 @@
 
 <div class="card">
   <div class="card-header">
-    <h3 class="card-title"><b>Laporan</b></h3>
+    <h3 class="card-title"><b>Dokumen</b></h3>
   </div>          
   <!-- /.card-header -->
   <div class="card-body">
@@ -34,8 +34,8 @@
       <thead>
       <tr>
         <th>No</th>
-        <th>Nomor Laporan</th>
-        <th>Judul Laporan</th>
+        <th>Nomor Dokumen</th>
+        <th>Judul Dokumen</th>
         <th>Tujuan</th>
         <th>Aksi</th>
       </tr>
