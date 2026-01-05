@@ -58,7 +58,7 @@
         <tr>
         <td>
         <p>SURAT PENGANTAR</p>
-        <p>Nomor TU.00/SP-{{ $data->nomorsp }}/PW23.1/2025</p>	
+        <p>Nomor TU.00/SP-{{ $data->nomorsp }}/PW23.1/2026</p>	
         </td>
         </tr>
     </table>
