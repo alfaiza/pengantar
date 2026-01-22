@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Konfirmasi;
 use App\Models\Laporan;
 use Barryvdh\DomPDF\PDF as PDF;
@@ -30,11 +31,13 @@ class LaporanController extends Controller
         $laporan->save();
         // dd($data);
 
+        $idlaporan = Laporan::whereYear('created_at', Carbon::now()->year)->count() + 1;
+
         if (count($data['tujuan'])>0){
             foreach ($data['tujuan'] as $item => $value){
                 $token = Str::random(16);
                 $data2 = array(
-                    'idlaporan' => $laporan->id,
+                    'idlaporan' => $idlaporan,
                     'tujuan' => $data['tujuan'][$item],
                     'alamat' => $data['alamat'][$item],
                     'token' => $token
