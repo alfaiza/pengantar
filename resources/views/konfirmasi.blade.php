@@ -26,7 +26,7 @@
         <div class="card-body">
           <div class="form-group">
             <label for="exampleInputEmail1">Nomor SP</label>
-            <input type="text" value="TU.00/SP-{{old('subunit', $data->id)}}/PW23/1/2024" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nomor Laporan">
+            <input type="text" value="TU.00/SP-{{old('subunit', $data->id)}}/PW23/1/2026" readonly="readonly" class="form-control" id="exampleInputEmail1" placeholder="Nomor Laporan">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Nomor Dokumen</label>
