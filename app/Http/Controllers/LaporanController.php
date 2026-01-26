@@ -37,7 +37,7 @@ class LaporanController extends Controller
             foreach ($data['tujuan'] as $item => $value){
                 $token = Str::random(16);
                 $data2 = array(
-                    'idlaporan' => $idlaporan,
+                    'idlaporan' => $laporan->id,
                     'tujuan' => $data['tujuan'][$item],
                     'alamat' => $data['alamat'][$item],
                     'token' => $token
