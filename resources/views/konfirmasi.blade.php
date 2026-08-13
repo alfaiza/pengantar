@@ -17,7 +17,7 @@
 <div class="login-box">
 
       <div class="card-header">
-        <h2 class="card-title"><marquee><b>CAPAIAN SKM TAHUN 2026- 90.61 (PREDIKAT 'A' SANGAT MEMUASKAN)</b></marquee</h2>
+        <h2 class="card-title"><marquee><b>CAPAIAN SKM TAHUN 2026- 90.61 (PREDIKAT 'A' SANGAT MEMUASKAN)</b></marquee></h2>
         <h3 class="card-title">Konfirmasi Terima Dokumen</h3>
       </div>
       <!-- /.card-header -->
